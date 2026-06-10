@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import { useChat } from '../context/ChatContext';
 import toast from 'react-hot-toast';
 
-const WS_URL = 'http://localhost:8080/ws';
+const WS_URL = (import.meta.env.VITE_API_URL || 'http://localhost:8080') + '/ws';
 
 export function useWebSocket() {
   const { token, user } = useAuth();
